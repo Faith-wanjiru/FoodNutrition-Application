@@ -78,7 +78,7 @@ nav ul li a {
     font-size: 18px; 
     border: none;
     border-radius: 0 20px 20px 0; 
-    background: linear-gradient(45deg, #ff7f50, #ff6347); 
+    background: linear-gradient(45deg, darkcyan, darkcyan); 
     color: #fff;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
