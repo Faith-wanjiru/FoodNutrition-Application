@@ -7,7 +7,7 @@ body, html {
 }
 header {
     display: flex;
-    justify-content: space-between;
+    gap: 50%;
     align-items: center;
     padding: 20px;
     background-color: #fff;
@@ -20,6 +20,7 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
+    gap: 90%;
 }
 nav ul li {
     margin-left: 20px;
@@ -32,7 +33,7 @@ nav ul li a {
 .hero {
     position: relative;
     height: calc(100vh - 40px); 
-    background: url('./images/landinfPage-Piture.jpeg') no-repeat center center/cover;
+    background: url('./images/pexels-ella-olsson-572949-1640772.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,14 +67,14 @@ nav ul li a {
     align-items: center;
     margin-top: 20px;
 }
-.search-bar input {
+#searchInput {
     padding: 15px 20px;
     font-size: 18px;
     border: none;
     border-radius: 20px 0 0 20px; 
     width: 200px; 
 }
-.search-bar button {
+.search{
     padding: 15px 20px; 
     font-size: 18px; 
     border: none;
@@ -82,7 +83,6 @@ nav ul li a {
     color: #fff;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    transition: background 0.3s ease; 
 }
 .search-bar button:hover {
     background: linear-gradient(45deg, #ff6347, #ff4500); 
