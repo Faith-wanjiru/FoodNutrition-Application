@@ -86,3 +86,10 @@ function displayResults(data) {
         }
     }
 }
+function displayError(error) {
+    getResults.innerHTML = '';
+    const errorMessage = document.createElement('div');
+    errorMessage.classList.add('error');
+    errorMessage.textContent = `Error: ${error.message}`;
+    getResults.appendChild(errorMessage);
+}
