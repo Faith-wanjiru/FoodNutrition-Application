@@ -23,3 +23,33 @@ async function getFood(foodQuery) {
         throw new Error(`Error fetching data: ${response.status} - ${response.statusText}`);
     }
 }
+function displayResults(data) {
+    console.log('Received data:', data);
+    const resultsContainer = document.getElementById('getResults');
+    resultsContainer.innerHTML = '';
+    if (data.common.length === 0 && data.branded.length === 0) {
+        const noResultsMessage = document.createElement('div');
+        noResultsMessage.classList.add('no-results');
+        noResultsMessage.textContent = 'No results found.';
+        resultsContainer.appendChild(noResultsMessage);
+    } else {
+        data.common.forEach(item => {
+            const singleItem = document.createElement('div');
+            singleItem.classList.add('single-item');
+            const image = document.createElement('img');
+            image.src = item.photo.thumb;
+            singleItem.appendChild(image);
+            const foodComponents = document.createElement('div');
+            foodComponents.classList.add('food-components');
+            const foodName = document.createElement('h5');
+            foodName.textContent = item.food_name;
+            const servingInfo = document.createElement('p');
+            servingInfo.textContent = `${item.serving_qty} ${item.serving_unit}`;
+            const calorieInfo = document.createElement('p');
+            calorieInfo.textContent = `Calories: ${item.nf_calories}`;
+            foodComponents.appendChild(foodName);
+            foodComponents.appendChild(servingInfo);
+            foodComponents.appendChild(calorieInfo);
+            singleItem.appendChild(foodComponents);
+            resultsContainer.appendChild(singleItem);
+        });
