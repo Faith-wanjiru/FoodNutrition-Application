@@ -2,6 +2,7 @@ const appId = 'c8546fb1';
 const apiKey = 'f59dc49d3ee427581cb622c6b94f61d4';
 const getResults = document.getElementById('searchedItem');
 const endpoint = 'https://trackapi.nutritionix.com/v2/search/instant';
+
 async function getFood(foodQuery) {
     const url = `${endpoint}?query=${encodeURIComponent(foodQuery)}`;
     const response = await fetch(url, {
@@ -26,6 +27,7 @@ document.getElementById('search-bar').addEventListener('submit', async function(
     const food = document.getElementById('searchInput').value;
     try {
         const data = await getFood(food);
+        console.log(data);
         displayResults(data);
     } catch (error) {
         console.log(error);
