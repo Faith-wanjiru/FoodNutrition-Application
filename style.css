@@ -11,6 +11,7 @@ body{
 }
 .logo{
     margin-top: 1%;
+    padding-left: 1%;
 }
 #landing{
     position: relative;
@@ -22,7 +23,7 @@ body{
     gap: 50%;
     background-color:#024034;
     height: 80px;
-    top: 0%;
+    top: -2%;
     width: 100%
 }
 .nav ul {
@@ -82,7 +83,8 @@ body{
     /* border: solid 2px; */
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    padding: 2% 5%;
+    grid-row-gap: 50px;
+    padding: 2% 0;
 }
 #maintext{
     position: absolute;
@@ -99,10 +101,13 @@ body{
     border-radius: 100px;
 }
 .single-item{
-    /* border: solid 2px; */
-    padding: 2% 1%;
+    padding: 2% 8%;
     width: 300px;
-    border: solid rgba(128, 128, 128, 0.171);
+    border-radius: 23px;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.521);
+}
+.food-components{
+    /* color: white; */
 }
 .single-item h5{
     font-size: 20px;
