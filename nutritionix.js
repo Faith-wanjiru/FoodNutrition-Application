@@ -1,6 +1,7 @@
 const appId = 'c8546fb1';
 const apiKey = 'f59dc49d3ee427581cb622c6b94f61d4';
 const getResults = document.getElementById('searchedItem');
+let isTextDisplayed = false;
 const endpoint = 'https://trackapi.nutritionix.com/v2/search/instant';
 
 async function getFood(foodQuery) {
@@ -28,12 +29,27 @@ document.getElementById('search-bar').addEventListener('submit', async function(
     try {
         const data = await getFood(food);
         console.log(data);
+        removeImages()
+        displayText()
         displayResults(data);
     } catch (error) {
         console.log(error);
         displayError(error);
     }
 });
+function displayText() {
+    const textDiv = document.getElementById("text");
+    textDiv.innerHTML = ''; 
+    const text = document.createElement('h2');
+    text.textContent = "Results!";
+    textDiv.appendChild(text);
+    text.style.display = "block";
+    isTextDisplayed = true;
+}
+function removeImages(){
+    const allImages = document.getElementById('display')
+    allImages.style.display = 'none';
+}
 function displayResults(data) {
     console.log('Received data:', data);
     const resultsContainer = document.getElementById('getResults');
