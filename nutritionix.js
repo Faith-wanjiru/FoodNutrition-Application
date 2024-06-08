@@ -37,6 +37,17 @@ document.getElementById('search-bar').addEventListener('submit', async function(
         displayError(error);
     }
 });
+document.getElementById('searchInput').addEventListener('input', function() {
+    const inputValue = this.value;
+    const resultsDiv = document.getElementById('getResults');
+    const imagesDiv = document.getElementById('display');
+    if (inputValue.trim() === '') {
+        // Clear the results
+        resultsDiv.innerHTML = '';
+        // Restore the initial images
+        imagesDiv.style.display = 'block';
+    } 
+});
 function displayText() {
     const textDiv = document.getElementById("text");
     textDiv.innerHTML = ''; 
@@ -50,6 +61,7 @@ function removeImages(){
     const allImages = document.getElementById('display')
     allImages.style.display = 'none';
 }
+
 function displayResults(data) {
     console.log('Received data:', data);
     const resultsContainer = document.getElementById('getResults');
